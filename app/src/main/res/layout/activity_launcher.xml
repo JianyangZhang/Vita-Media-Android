@@ -8,13 +8,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/background"
+    android:background="@color/backgroundDark"
     tools:context="jianyang.vita_media_android.activities.LauncherActivity">
 
     <ImageView
         android:id="@+id/logo_1"
         android:layout_centerInParent="true"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dip"
+        android:layout_height="200dip"
         android:src="@drawable/logo" />
 </RelativeLayout>
