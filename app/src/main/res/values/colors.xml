@@ -2,7 +2,8 @@
 <resources>
     <color name="colorPrimary">#262626</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#FFBD4A</color>
+    <color name="colorAccent">#FFA500</color>
+    <color name="logoOrange">#FFBD4A</color>
     <color name="mywhite">#F9F7F9</color>
     <color name="background">#C6C6C6</color>
     <color name="backgroundDark">#000000</color>

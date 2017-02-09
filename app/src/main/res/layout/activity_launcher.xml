@@ -12,7 +12,7 @@
     tools:context="jianyang.vita_media_android.activities.LauncherActivity">
 
     <ImageView
-        android:id="@+id/logo_1"
+        android:id="@+id/logo_launcher"
         android:layout_centerInParent="true"
         android:layout_width="200dip"
         android:layout_height="200dip"
