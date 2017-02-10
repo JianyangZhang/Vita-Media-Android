@@ -12,7 +12,7 @@
         android:id="@+id/body_main"
         android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dip">
 
     </FrameLayout>
     <!-- pager -->
@@ -22,22 +22,37 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="3dip"
+        android:weightSum="4"
         android:background="@color/colorPrimary">
         <RadioButton
             android:id="@+id/button_localMusic"
-            android:gravity="center"
-            android:layout_gravity="center_vertical"
             android:drawableTop="@drawable/selector_localmusic"
-            android:drawablePadding="3dip"
             android:text="Local Music"
-            android:textSize="10sp"
             android:fontFamily="sans-serif-smallcaps"
-            android:textColor="@color/selector_text"
-            android:button="@android:color/transparent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            style="@style/buttonStyle">
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/button_localVideo"
+            android:drawableTop="@drawable/selector_localvideo"
+            android:text="Local Video"
+            android:fontFamily="sans-serif-smallcaps"
+            style="@style/buttonStyle">
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/button_youtube"
+            android:drawableTop="@drawable/selector_localmusic"
+            android:text="Youtube"
+            android:fontFamily="sans-serif-smallcaps"
+            style="@style/buttonStyle">
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/button_search"
+            android:drawableTop="@drawable/selector_localvideo"
+            android:text="Search"
+            android:fontFamily="sans-serif-smallcaps"
+            style="@style/buttonStyle">
         </RadioButton>
 
-    </RadioGroup>>
+    </RadioGroup>
 
 </LinearLayout>
