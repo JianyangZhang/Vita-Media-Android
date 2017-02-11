@@ -7,17 +7,16 @@
     android:background="@color/background"
     tools:context="jianyang.vita_media_android.activities.MainActivity">
     <!-- tool bar -->
-    <!-- body -->
+    <!-- pagers -->
     <FrameLayout
-        android:id="@+id/body_main"
+        android:id="@+id/pagers_layout"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dip">
-
     </FrameLayout>
-    <!-- pager -->
+    <!-- buttons -->
     <RadioGroup
-        android:id="@+id/pager_main"
+        android:id="@+id/button_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -27,28 +26,28 @@
         <RadioButton
             android:id="@+id/button_localMusic"
             android:drawableTop="@drawable/selector_localmusic"
-            android:text="Local Music"
+            android:text="@string/tag_0"
             android:fontFamily="sans-serif-smallcaps"
             style="@style/buttonStyle">
         </RadioButton>
         <RadioButton
             android:id="@+id/button_localVideo"
             android:drawableTop="@drawable/selector_localvideo"
-            android:text="Local Video"
+            android:text="@string/tag_1"
             android:fontFamily="sans-serif-smallcaps"
             style="@style/buttonStyle">
         </RadioButton>
         <RadioButton
             android:id="@+id/button_youtube"
             android:drawableTop="@drawable/selector_localmusic"
-            android:text="Youtube"
+            android:text="@string/tag_2"
             android:fontFamily="sans-serif-smallcaps"
             style="@style/buttonStyle">
         </RadioButton>
         <RadioButton
             android:id="@+id/button_search"
             android:drawableTop="@drawable/selector_localvideo"
-            android:text="Search"
+            android:text="@string/tag_3"
             android:fontFamily="sans-serif-smallcaps"
             style="@style/buttonStyle">
         </RadioButton>
