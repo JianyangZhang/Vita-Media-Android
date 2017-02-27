@@ -6,32 +6,32 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import jianyang.vita_media_android.R;
 import jianyang.vita_media_android.fragments.PagerFragment;
-import jianyang.vita_media_android.pagers.MusicPager;
-import jianyang.vita_media_android.pagers.Pager;
-import jianyang.vita_media_android.pagers.SearchPager;
-import jianyang.vita_media_android.pagers.VideoPager;
-import jianyang.vita_media_android.pagers.YoutubePager;
+import jianyang.vita_media_android.pagers.BasePager;
+import jianyang.vita_media_android.pagers.MusicBasePager;
+import jianyang.vita_media_android.pagers.SearchBasePager;
+import jianyang.vita_media_android.pagers.VideoBasePager;
+import jianyang.vita_media_android.pagers.YoutubeBasePager;
 
 public class MainActivity extends FragmentActivity {
     public static int page;
-    public static ArrayList<Pager> pagers;
+    public static ArrayList<BasePager> basePagers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FrameLayout pagers_layout = (FrameLayout) findViewById(R.id.pagers_layout);
+        // FrameLayout pagers_layout = (FrameLayout) findViewById(R.id.pagers_layout);
         RadioGroup button_group = (RadioGroup) findViewById(R.id.button_group);
-
-        pagers = new ArrayList<>();
-        pagers.add(new MusicPager(this));
-        pagers.add(new VideoPager(this));
-        pagers.add(new YoutubePager(this));
-        pagers.add(new SearchPager(this));
+        basePagers = new ArrayList<>();
+        basePagers.add(new MusicBasePager(this));
+        basePagers.add(new VideoBasePager(this));
+        basePagers.add(new YoutubeBasePager(this));
+        basePagers.add(new SearchBasePager(this));
 
         button_group.setOnCheckedChangeListener(new ButtonGroupListener());
         button_group.check(R.id.button_localMusic);
@@ -41,9 +41,6 @@ public class MainActivity extends FragmentActivity {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int i) {
             switch (i) {
-                default:
-                    page = 0;
-                    break;
                 case R.id.button_localMusic:
                     page = 0;
                     break;
@@ -55,6 +52,9 @@ public class MainActivity extends FragmentActivity {
                     break;
                 case R.id.button_search:
                     page = 3;
+                    break;
+                default:
+                    page = 0;
                     break;
             }
             setFragment();

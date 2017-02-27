@@ -15,7 +15,7 @@
             </intent-filter>
         </activity>logo
         <!--  main activity -->
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.MainActivity" android:launchMode="singleTask">
         </activity>
     </application>
 </manifest>

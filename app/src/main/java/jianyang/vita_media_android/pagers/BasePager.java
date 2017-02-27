@@ -3,13 +3,15 @@ package jianyang.vita_media_android.pagers;
 import android.content.Context;
 import android.view.View;
 
-public abstract class Pager {
+public abstract class BasePager {
     public final Context context;
     public View view;
-    public Pager(Context context) {
+    public boolean isInitiated;
+
+    public BasePager(Context context) {
         this.context = context;
+        isInitiated = false;
         view = initView();
-        initData();
     }
     public abstract View initView();
     public abstract void initData();

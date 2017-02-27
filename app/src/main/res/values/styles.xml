@@ -15,10 +15,10 @@
         <item name="android:textSize">10sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/selector_text</item>
-        <item name="android:button">@android:color/transparent</item>
         <item name="android:layout_width">0dip</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>>
     </style>
 
 </resources>

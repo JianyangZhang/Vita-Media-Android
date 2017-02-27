@@ -6,12 +6,11 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
-public class MusicPager extends Pager {
+public class MusicBasePager extends BasePager {
     private TextView textView;
-    public MusicPager(Context context) {
+    public MusicBasePager(Context context) {
         super(context);
     }
-
     @Override
     public View initView() {
         textView = new TextView(context);

@@ -6,9 +6,9 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
-public class VideoPager extends Pager {
+public class VideoBasePager extends BasePager {
     private TextView textView;
-    public VideoPager(Context context) {
+    public VideoBasePager(Context context) {
         super(context);
     }
 
