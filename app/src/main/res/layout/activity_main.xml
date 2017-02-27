@@ -7,7 +7,7 @@
     android:background="@color/background"
     tools:context="jianyang.vita_media_android.activities.MainActivity">
     <!-- tool bar -->
-    <LinearLayout
+    <jianyang.vita_media_android.view.ToolBar
         android:id="@+id/toolbar"
         android:orientation="horizontal"
         android:background="@color/colorPrimary"
@@ -16,8 +16,9 @@
         android:gravity="center_vertical"
         >
         <ImageView
-            android:layout_marginLeft="5dip"
             android:id="@+id/toolbar_logo"
+            android:clickable="true"
+            android:layout_marginLeft="5dip"
             android:src="@mipmap/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -39,7 +40,7 @@
             android:layout_width="0dip"
             android:layout_height="32dip">
         </TextView>
-    </LinearLayout>
+    </jianyang.vita_media_android.view.ToolBar>
     <!-- pagers -->
     <FrameLayout
         android:id="@+id/pagers_layout"
