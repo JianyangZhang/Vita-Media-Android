@@ -3,9 +3,9 @@ package jianyang.vita_media_android.pagers;
 import android.content.Context;
 import android.view.View;
 
-public class YoutubeBasePager extends BasePager {
+public class SearchPager extends BasePager {
 
-    public YoutubeBasePager(Context context) {
+    public SearchPager(Context context) {
         super(context);
     }
 

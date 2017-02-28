@@ -6,12 +6,11 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.TextView;
 
-public class VideoBasePager extends BasePager {
+public class MusicPager extends BasePager {
     private TextView textView;
-    public VideoBasePager(Context context) {
+    public MusicPager(Context context) {
         super(context);
     }
-
     @Override
     public View initView() {
         textView = new TextView(context);
@@ -22,6 +21,6 @@ public class VideoBasePager extends BasePager {
 
     @Override
     public void initData() {
-        textView.setText("video pager");
+        textView.setText("music pager");
     }
 }

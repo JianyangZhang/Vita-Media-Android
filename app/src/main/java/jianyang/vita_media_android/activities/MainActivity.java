@@ -4,19 +4,17 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.widget.FrameLayout;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import jianyang.vita_media_android.R;
 import jianyang.vita_media_android.fragments.PagerFragment;
 import jianyang.vita_media_android.pagers.BasePager;
-import jianyang.vita_media_android.pagers.MusicBasePager;
-import jianyang.vita_media_android.pagers.SearchBasePager;
-import jianyang.vita_media_android.pagers.VideoBasePager;
-import jianyang.vita_media_android.pagers.YoutubeBasePager;
+import jianyang.vita_media_android.pagers.MusicPager;
+import jianyang.vita_media_android.pagers.SearchPager;
+import jianyang.vita_media_android.pagers.VideoPager;
+import jianyang.vita_media_android.pagers.YoutubePager;
 
 public class MainActivity extends FragmentActivity {
     public static int page;
@@ -28,10 +26,10 @@ public class MainActivity extends FragmentActivity {
         // FrameLayout pagers_layout = (FrameLayout) findViewById(R.id.pagers_layout);
         RadioGroup button_group = (RadioGroup) findViewById(R.id.button_group);
         basePagers = new ArrayList<>();
-        basePagers.add(new MusicBasePager(this));
-        basePagers.add(new VideoBasePager(this));
-        basePagers.add(new YoutubeBasePager(this));
-        basePagers.add(new SearchBasePager(this));
+        basePagers.add(new MusicPager(this));
+        basePagers.add(new VideoPager(this));
+        basePagers.add(new YoutubePager(this));
+        basePagers.add(new SearchPager(this));
 
         button_group.setOnCheckedChangeListener(new ButtonGroupListener());
         button_group.check(R.id.button_localMusic);
@@ -64,7 +62,7 @@ public class MainActivity extends FragmentActivity {
     private void setFragment() {
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.pagers_layout, new PagerFragment());
+        ft.replace(R.id.layout_pagers, new PagerFragment());
         ft.commit();
     }
 }

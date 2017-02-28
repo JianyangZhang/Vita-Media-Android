@@ -43,7 +43,7 @@
     </jianyang.vita_media_android.view.ToolBar>
     <!-- pagers -->
     <FrameLayout
-        android:id="@+id/pagers_layout"
+        android:id="@+id/layout_pagers"
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dip">
