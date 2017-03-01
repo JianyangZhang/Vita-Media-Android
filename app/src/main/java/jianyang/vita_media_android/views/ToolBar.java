@@ -1,4 +1,4 @@
-package jianyang.vita_media_android.view;
+package jianyang.vita_media_android.views;
 
 import android.content.Context;
 import android.util.AttributeSet;

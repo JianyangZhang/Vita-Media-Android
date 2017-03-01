@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dip"
+    android:padding="5dip">
+
+    <ImageView
+        android:id="@+id/icon_localvideo"
+        android:src="@drawable/icon_localvideo_96"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:paddingBottom="5dip"/>
+
+    <LinearLayout
+        android:layout_toRightOf="@+id/icon_localvideo"
+        android:layout_marginLeft="5dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title_localvideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="video name"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/duration_localvideo"
+            android:layout_marginTop="2dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10:00"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/size_localvideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="2dip"
+        android:layout_marginBottom="2dip"
+        android:text="20.5MB"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="12sp" />
+    <View
+        android:background="@android:color/darker_gray"
+        android:layout_alignParentBottom="true"
+        android:layout_height="1dip"
+        android:layout_width="match_parent"/>
+
+</RelativeLayout>

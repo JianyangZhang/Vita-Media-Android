@@ -16,14 +16,13 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp"
-        android:fontFamily="monospace"
+        android:fontFamily="casual"
         android:visibility="gone" />
 
     <ProgressBar
         android:id="@+id/progress_localvideo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone" />
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

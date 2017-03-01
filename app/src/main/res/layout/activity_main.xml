@@ -7,7 +7,7 @@
     android:background="@color/background"
     tools:context="jianyang.vita_media_android.activities.MainActivity">
     <!-- tool bar -->
-    <jianyang.vita_media_android.view.ToolBar
+    <jianyang.vita_media_android.views.ToolBar
         android:id="@+id/toolbar"
         android:orientation="horizontal"
         android:background="@color/colorPrimary"
@@ -40,7 +40,7 @@
             android:layout_width="0dip"
             android:layout_height="32dip">
         </TextView>
-    </jianyang.vita_media_android.view.ToolBar>
+    </jianyang.vita_media_android.views.ToolBar>
     <!-- pagers -->
     <FrameLayout
         android:id="@+id/layout_pagers"
