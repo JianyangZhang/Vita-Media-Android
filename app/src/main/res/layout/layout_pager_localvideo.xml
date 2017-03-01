@@ -5,6 +5,7 @@
 
     <ListView
         android:id="@+id/list_localvideo"
+        android:divider="@null"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -16,7 +17,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/darker_gray"
         android:textSize="20sp"
-        android:fontFamily="casual"
+        android:fontFamily="serif-monospace"
         android:visibility="gone" />
 
     <ProgressBar

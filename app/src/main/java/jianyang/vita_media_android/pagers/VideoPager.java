@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
@@ -16,27 +17,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jianyang.vita_media_android.R;
+import jianyang.vita_media_android.adapters.LocalVideoPagerAdapter;
 import jianyang.vita_media_android.beans.MediaBean;
 
 public class VideoPager extends BasePager {
-    private ListView listView;
-    private TextView textView;
-    private ProgressBar progressBar;
-    public static Context context;
-    public static List<MediaBean> mediaBeans;
-
     private static final int LOCAL_VIDEO_SEARCH_COMPLETE = 102;
+    public static List<MediaBean> mediaBeans;
+    private ListView list_localvideo;
+    private TextView nofile;
+    private ProgressBar progress_localvideo;
+    private LocalVideoPagerAdapter localVideoPagerAdapter;
+
+    private Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            if (mediaBeans!= null && mediaBeans.size() > 0) {
+                localVideoPagerAdapter = new LocalVideoPagerAdapter(context);
+                list_localvideo.setAdapter(localVideoPagerAdapter);
+                nofile.setVisibility(View.GONE);
+            } else {
+                nofile.setVisibility(View.VISIBLE);
+            }
+            progress_localvideo.setVisibility(View.GONE);
+        }
+    };
+
     public VideoPager(Context context) {
         super(context);
-        this.context = context;
     }
 
     @Override
     public View initView() {
         View view = View.inflate(context, R.layout.layout_pager_localvideo, null);
-        listView = (ListView) view.findViewById(R.id.list_localvideo);
-        textView = (TextView) view.findViewById(R.id.nofile);
-        progressBar = (ProgressBar) view.findViewById(R.id.progress_localvideo);
+        list_localvideo = (ListView) view.findViewById(R.id.list_localvideo);
+        nofile = (TextView) view.findViewById(R.id.nofile);
+        progress_localvideo = (ProgressBar) view.findViewById(R.id.progress_localvideo);
         return view;
     }
 
@@ -45,16 +61,6 @@ public class VideoPager extends BasePager {
         mediaBeans = new ArrayList<>();
         findLocalVideos();
     }
-
-    private Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-            if (mediaBeans!= null && mediaBeans.size() > 0) {
-                listView.setAdapter();
-            }
-        }
-    };
 
     private void findLocalVideos() {
         new Thread() {
@@ -71,8 +77,9 @@ public class VideoPager extends BasePager {
                         MediaStore.Video.Media.ARTIST
                 };
                 Cursor cursor = cr.query(uri, objs, null, null, null);
+
                 if (cursor != null) {
-                    cursor.moveToFirst();
+                    // cursor.moveToFirst(); ???
                     while (cursor.moveToNext()) {
                         MediaBean mediaBean = new MediaBean();
                         String name = cursor.getString(0);
